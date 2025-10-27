@@ -1,0 +1,236 @@
+/* Màu chủ đạo mới */
+:root {
+  --primary-color: #e5603c; /* Cam Đất Ấm - Gần với San Hô hoặc Sắc Cam Rực */
+  --primary-hover: #c94f29; /* Màu tối hơn khi hover */
+  --background-light: #fef8f0; /* Nền trắng kem nhẹ */
+}
+
+/* --- 1. Thiết lập chung --- */
+.login-page {
+  /* Nền trang màu ấm, nhẹ nhàng */
+  background-color: var(--background-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* --- 2. Thẻ Đăng nhập (Login Card) --- */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+
+  /* Đổ bóng sắc nét, hiện đại */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- 3. Nút Quay lại (Back Button) --- */
+.back-button-log {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-button-log:hover {
+  color: var(--primary-color); /* Màu ấm khi hover */
+}
+
+/* --- 4. Logo và Tiêu đề --- */
+.login-logo {
+  /* Thiết lập cho icon Heart - Sử dụng màu chủ đạo mới */
+  background-color: var(--primary-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  /* Thêm đổ bóng nhẹ cho logo để nổi bật */
+  box-shadow: 0 4px 10px rgba(229, 96, 60, 0.3);
+}
+
+.icon-logo {
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.login-title {
+  color: #333;
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.login-caption {
+  font-size: 0.95em;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.link {
+  color: var(--primary-color); /* Màu ấm cho liên kết */
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* --- 5. Form và Input Fields --- */
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  color: #999;
+  width: 20px;
+  height: 20px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Viền focus màu ấm */
+  box-shadow: 0 0 0 3px rgba(229, 96, 60, 0.15);
+}
+
+/* Thiết lập riêng cho nút ẩn/hiện mật khẩu */
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle:hover {
+  color: #555;
+}
+
+/* --- 6. Tùy chọn và Nút Đăng nhập --- */
+.login-options {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+}
+
+.forgot {
+  color: var(--primary-color); /* Màu ấm cho quên mật khẩu */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Màu chủ đạo (Cam Đất Ấm) */
+  background-color: var(--primary-color);
+  color: white;
+
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: var(--primary-hover); /* Tối hơn một chút khi hover */
+  box-shadow: 0 4px 10px rgba(229, 96, 60, 0.25);
+}
+
+.login-button:active {
+  transform: scale(0.99);
+}
+
+.error-text-log {
+  color: #e63946;
+  font-size: 0.85rem;
+  margin-top: -6px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.form-message-log {
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.form-message-log.success {
+  background-color: #d8f3dc;
+  color: #1b4332;
+  border: 1px solid #95d5b2;
+}
+
+.form-message-log.error {
+  background-color: #ffe5e5;
+  color: #c1121f;
+  border: 1px solid #e63946;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,110 @@
+/* layout */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* sidebar */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* title */
+.sidebar h2 {
+  margin: 0;
+  padding: 0 20px 14px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+}
+
+/* thin divider under title */
+.sidebar-divider {
+  height: 1px;
+  background: #334155;
+  margin: 0 20px 18px 20px;
+  opacity: 0.9;
+}
+
+/* menu list */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* each li spacing (so active boxes don't stick) */
+.sidebar ul li {
+  margin: 6px 12px;
+}
+
+/* link base */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  color: #d1d5db;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.18s ease;
+  position: relative; /* for optional left indicator */
+}
+
+/* hover */
+.nav-item:hover {
+  background: #1d4ed8;
+  color: #fff;
+}
+.nav-item:hover svg {
+  stroke: #fff;
+}
+
+/* active */
+.nav-item.active {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+.nav-item.active svg {
+  stroke: #fff;
+}
+
+/* optional: small left indicator (uncomment if want a vertical bar)
+.nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: -6px;             // see spacing: li margin-left = 12px, adjust if changed
+  top: 6px;
+  bottom: 6px;
+  width: 6px;
+  background: #1e90ff;
+  border-radius: 6px;
+}
+*/
+
+/* content area */
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  background: #f4f6f9;
+}
+
+.logout-item {
+  color: #f87171;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-item:hover {
+  background: rgba(248, 113, 113, 0.15);
+}

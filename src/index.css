@@ -1,0 +1,230 @@
+/* ===== Reset cơ bản ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ===== Links ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+a:hover,
+a:focus {
+  color: orange;
+}
+
+/* ===== Headings ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+/* ===== Paragraph ===== */
+p {
+  margin-bottom: 1em;
+  color: #858383; /* Có thể bị override bởi cụ thể hơn như .feature-card p */
+}
+
+/* ===== Buttons Base ===== */
+button {
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+button.primary {
+  background: #e63946;
+  color: #fff;
+}
+button.primary:hover {
+  background: #c92f3e;
+}
+
+button.secondary {
+  border: 2px solid orange;
+  background: #fff7ed;
+  color: orange;
+}
+/* ===== Utilities ===== */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-gray {
+  color: #555;
+}
+.text-orange {
+  color: orange;
+}
+
+.flex {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-8 {
+  padding: 2rem;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+.bg-gray {
+  background-color: #f5f5f5;
+}
+
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  .text-center-sm {
+    text-align: center;
+  }
+  .flex-column-sm {
+    flex-direction: column;
+  }
+}
+
+/* Container chính cho toàn bộ phần phân trang */
+.pagination {
+  display: flex;
+  justify-content: center; /* Căn giữa các thành phần */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa các thành phần */
+  padding: 10px 0;
+  font-family: Arial, sans-serif; /* Chọn một font chữ dễ đọc */
+}
+
+/* Kiểu cho các nút bấm */
+.pagination button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px; /* Kích thước nút */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Bo góc nhẹ */
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.3s, border-color 0.3s; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+/* Kiểu khi di chuột qua nút */
+.pagination button:not([disabled]):hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+/* Kiểu khi nút bị vô hiệu hóa (disabled) */
+.pagination button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6; /* Làm mờ nút */
+  background-color: #f9f9f9;
+  color: #666;
+  border-color: #eee;
+}
+
+/* Kiểu cho phần hiển thị thông tin trang (Trang X / Y) */
+.pagination span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  padding: 0 5px; /* Khoảng cách nhẹ quanh chữ */
+}
+
+/* Kiểu cho các icon (ChevronLeft và ChevronRight) bên trong nút */
+.pagination button svg {
+  /* Các icon thường được căn chỉnh bởi thư viện, nhưng nếu cần */
+  display: block;
+  margin: 0 4px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Căn chỉnh lại icon trong nút "Trước" */
+.pagination button:first-child svg {
+  order: -1; /* Đặt icon ở trước chữ "Trước" */
+  margin-right: 6px;
+  margin-left: 0;
+}
+
+/* Căn chỉnh lại icon trong nút "Sau" */
+.pagination button:last-child svg {
+  margin-left: 6px;
+  margin-right: 0;
+}

@@ -1,0 +1,161 @@
+/* Wrapper */
+.cats-page {
+  padding: 20px;
+  background: #f9fafb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Header */
+.cats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cats-header h1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.cat-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Nút thêm mèo */
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-add:hover {
+  background: #1e40af;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 15px 0;
+  width: 100%;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  background: transparent;
+}
+
+/* Table */
+.cats-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center; /* 👉 căn giữa mặc định cho cả bảng */
+}
+
+.cats-table th,
+.cats-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  text-align: center; /* 👉 căn giữa từng ô */
+  vertical-align: middle; /* 👉 căn giữa theo chiều dọc */
+}
+
+.cats-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #444;
+}
+
+.cats-table tr:hover {
+  background: #f9fafb;
+}
+
+/* Trạng thái */
+.cat-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.cat-status.available {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.cat-status.sold {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Hành động */
+
+.btn-action button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.btn-action button:hover {
+  background: #f3f4f6;
+}
+
+.btn-view svg {
+  color: #2563eb;
+}
+.btn-edit svg {
+  color: #d97706;
+}
+.btn-delete svg {
+  color: #dc2626;
+}
+
+/* Ảnh mèo */
+.cat-thumb {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hiệu ứng hover cho đẹp */
+.cat-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cột ảnh căn giữa */
+.cats-table td:nth-child(2),
+.cats-table th:nth-child(2) {
+  text-align: center;
+}

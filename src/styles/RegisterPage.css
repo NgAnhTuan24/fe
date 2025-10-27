@@ -1,0 +1,183 @@
+/* RegisterPage.css - giống style login */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff8f0; /* nền trắng kem */
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  padding: 20px;
+}
+
+.register-card {
+  background: #ffffff; /* card trắng */
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* shadow nhẹ */
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+
+.back-button-re {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: none;
+  border: none;
+  color: #d9643b; /* cam đất */
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.back-button-re:hover {
+  color: #b54f28;
+}
+
+.register-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.icon-logo-re {
+  color: #d9643b;
+  width: 36px;
+  height: 36px;
+}
+
+.register-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #3a3a3a; /* đậm vừa phải */
+}
+
+.register-caption {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+.register-caption .link {
+  color: #d9643b;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.register-form .input-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.register-form .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #d2bfb5;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  border-radius: 10px;
+  border: 1px solid #e4d7cf;
+  outline: none;
+  transition: 0.2s;
+  font-size: 14px;
+  background: #fffaf6;
+}
+
+.register-form input:focus {
+  border-color: #d9643b;
+  box-shadow: 0 0 6px rgba(217, 100, 59, 0.25);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #d2bfb5;
+}
+
+.password-toggle:hover {
+  color: #d9643b;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #d9643b; /* cam nổi bật */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-button:hover {
+  background-color: #b54f28;
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 25px 20px;
+  }
+
+  .register-title {
+    font-size: 20px;
+  }
+
+  .register-button {
+    font-size: 14px;
+  }
+}
+
+/* Thông báo lỗi dưới input */
+.error-text {
+  color: #e63946;
+  font-size: 0.85rem;
+  margin-top: -6px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Thông báo tổng ở đầu form */
+.form-message {
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.form-message.success {
+  background-color: #d8f3dc;
+  color: #1b4332;
+  border: 1px solid #95d5b2;
+}
+
+.form-message.error {
+  background-color: #ffe5e5;
+  color: #c1121f;
+  border: 1px solid #e63946;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

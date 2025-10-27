@@ -1,0 +1,145 @@
+/* --- Trang chi tiết đơn hàng --- */
+.order-detail-page {
+  padding: 20px 150px;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* --- Header --- */
+.order-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-detail-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: #f3f4f6;
+}
+
+/* --- Các section --- */
+.detail-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.detail-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.detail-row .label {
+  width: 220px;
+  font-weight: 500;
+  color: #374151;
+  flex-shrink: 0;
+}
+
+/* --- Nhóm nút trạng thái --- */
+.status-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  color: #374151;
+}
+
+.status-btn:hover {
+  background: #f3f4f6;
+}
+
+.status-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* --- Thông tin mèo (Thú cưng) --- */
+
+/* Container cho mỗi con mèo */
+.pet-info-box {
+  display: flex; /* Sắp xếp ảnh và thông tin nằm ngang */
+  align-items: flex-start; /* Căn chỉnh các mục ở trên cùng */
+  gap: 30px; /* Khoảng cách giữa ảnh và thông tin */
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Khoảng cách giữa các box mèo */
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Ảnh của mèo */
+.pet-detail-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  flex-shrink: 0; /* Đảm bảo ảnh không bị co lại */
+}
+
+/* Container chứa các thông tin chi tiết của mèo */
+.pet-info {
+  display: flex;
+  flex-direction: column; /* Xếp các chi tiết theo chiều dọc */
+  flex-grow: 1; /* Cho phép phần thông tin chiếm hết không gian còn lại */
+}
+
+/* Các dòng thông tin bên trong pet-info */
+.pet-info > div {
+  display: flex; /* Đảm bảo label và giá trị nằm trên cùng một dòng */
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #1d1d1f;
+}
+
+/* Nhãn (label) trong phần thông tin mèo */
+.pet-info .label {
+  width: 100px; /* **Cố định chiều rộng của nhãn** để căn đều */
+  font-weight: 500;
+  color: #1f2937;
+  flex-shrink: 0; /* Đảm bảo nhãn không bị co lại */
+}

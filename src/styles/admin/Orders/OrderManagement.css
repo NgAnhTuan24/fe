@@ -1,0 +1,184 @@
+.orders-page-admin {
+  padding: 20px;
+  background: #f9fafb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Header */
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.orders-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+}
+
+.order-count {
+  background: #e5e7eb;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.order-count .count {
+  font-weight: bold;
+  color: #111;
+}
+
+/* Container của search + filter */
+.search-filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- Search Box --- */
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  background: transparent;
+}
+
+/* --- Filter Box --- */
+.filter-box {
+  position: relative;
+  width: 220px;
+}
+
+.status-select {
+  width: 100%;
+  padding: 15px 36px 15px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  appearance: none;
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #666;
+}
+
+/* Table Styles */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.orders-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #444;
+}
+
+.orders-table tbody tr:hover td {
+  background: #f9fafb;
+}
+
+/* Khách hàng */
+.customer-name {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.customer-phone {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Mèo */
+.pet-cell {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pet-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 8px; /* bo góc nhẹ, không còn tròn */
+  object-fit: cover;
+  margin-left: 65px;
+  border: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  display: block;
+}
+
+.pet-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pet-name {
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.2;
+  font-size: 1rem;
+}
+
+.pet-breed {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Tổng tiền */
+.total-amount {
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* Thao tác */
+.action-button {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  color: #2563eb;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.action-button:hover {
+  background-color: #eff6ff;
+  border-color: #93c5fd;
+}

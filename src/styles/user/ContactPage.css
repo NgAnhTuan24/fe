@@ -1,0 +1,323 @@
+/* ======================================================= */
+/* 1. Global Reset & Layout */
+/* ======================================================= */
+
+.contact-page {
+  padding: 40px 0;
+  font-family: Arial, sans-serif; /* Thay thế bằng font của bạn */
+  background-color: #f8f8f8; /* Nền nhẹ nhàng cho toàn trang */
+}
+
+.contact-page__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ======================================================= */
+/* 2. Header */
+/* ======================================================= */
+
+.contact-page__header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-page__title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-page__subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ======================================================= */
+/* 3. Main Content Layout (Info & Form) */
+/* ======================================================= */
+
+.contact-page__content {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+/* ======================================================= */
+/* 4. Contact Info Section */
+/* ======================================================= */
+
+.contact-info {
+  flex: 1; /* Chiếm 1 phần */
+}
+
+.contact-info__details {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* Đảm bảo phần này chiếm toàn bộ chiều cao trong bố cục flex của content */
+  height: 100%;
+}
+
+.contact-info__title {
+  font-size: 1.6rem;
+  color: #007bff; /* Màu chủ đạo */
+  margin-bottom: 25px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.contact-info__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 0; /* Không còn socials/chat ở dưới */
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.contact-info__icon-wrapper {
+  background-color: #e0f7ff;
+  color: #007bff;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-info__heading {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-info__text {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ======================================================= */
+/* 5. Contact Form Section */
+/* ======================================================= */
+
+.contact-form-wrapper {
+  flex: 2; /* Chiếm 2 phần (lớn hơn Info) */
+}
+
+.contact-form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form__title {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.contact-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form__row {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-form__group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form__group--full {
+  flex: 0 0 100%;
+}
+
+.contact-form__label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.contact-form__input,
+.contact-form__select,
+.contact-form__textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.contact-form__input:focus,
+.contact-form__select:focus,
+.contact-form__textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.contact-form__textarea {
+  resize: vertical;
+}
+
+/* Submit Button */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.button--primary {
+  background-color: #28a745; /* Màu xanh lá cây */
+  color: white;
+  width: fit-content;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.button--primary:hover {
+  background-color: #218838;
+}
+
+.button:active {
+  transform: scale(0.99);
+}
+
+.button__icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+/* ===============================
+   Login Required Message
+================================== */
+/* File: src/styles/user/ContactPage.css */
+
+.contact-login-required {
+  /* Căn giữa nội dung trên màn hình */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh; /* Chiếm ít nhất nửa chiều cao viewport để căn giữa theo chiều dọc */
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f8f8; /* Màu nền nhẹ */
+  border-radius: 8px;
+  max-width: 600px; /* Giới hạn chiều rộng tối đa */
+  margin: 40px auto; /* Căn giữa khối theo chiều ngang */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.contact-login-required p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.contact-login-required .button--primaryV2 {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  background-color: #ff6f61;
+  color: white;
+}
+
+.contact-login-required .button--primaryV2:hover {
+  background-color: #e65c50;
+  transform: translateY(-2px);
+}
+
+.contact-login-required .button--primaryV2:active {
+  transform: translateY(0);
+}
+
+/* ======================================================= */
+/* 6. Media Queries (Responsive Design) */
+/* ======================================================= */
+
+@media (max-width: 992px) {
+  .contact-page__content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-info,
+  .contact-form-wrapper {
+    flex: none;
+    width: 100%;
+  }
+
+  .contact-info__list {
+    grid-template-columns: 1fr 1fr; /* 2 cột trên tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form__row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-form__group {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-page {
+    padding: 20px 0;
+  }
+
+  .contact-page__title {
+    font-size: 2rem;
+  }
+
+  .contact-info__list {
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+  }
+}

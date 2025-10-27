@@ -1,0 +1,149 @@
+/* File: src/styles/user/PaymentPage.css */
+
+/* --- Container Chính --- */
+.payment-page {
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.payment-page h2 {
+  color: #007bff;
+  margin-bottom: 25px;
+  font-size: 2em;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+}
+
+/* --- 1. Thông tin Đơn hàng (Order Summary) --- */
+.order-summary-section {
+  margin: 25px 0;
+  padding: 20px;
+  border: 1px solid #a0c3ff;
+  border-radius: 10px;
+  background-color: #f0f6ff; /* Nền xanh nhạt làm nổi bật thông tin */
+  text-align: left;
+}
+
+.order-summary-section h3 {
+  color: #0056b3;
+  font-size: 1.4em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.order-summary-section p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: #333;
+  display: flex;
+  justify-content: space-between; /* Căn chỉnh Mã và Giá trị */
+}
+
+.order-code-display {
+  font-weight: 600;
+  color: #555;
+}
+
+.total-amount-display {
+  font-weight: bold;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px dashed #cccccc;
+}
+
+.amount-value {
+  color: #dc3545; /* Màu đỏ nổi bật cho tổng tiền */
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+/* --- 2. Thông tin Thanh toán (Bank Info) --- */
+.bank-info-section {
+  margin: 30px 0;
+  padding: 25px;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bank-info-section h3 {
+  color: #333;
+  font-size: 1.4em;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.bank-info-section input {
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.bank-info-section input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* --- Nút Hành động (Payment Actions) --- */
+.payment-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Khoảng cách giữa hai nút */
+  margin-top: 30px;
+}
+
+.payment-actions button {
+  flex-grow: 1; /* Hai nút chia đều không gian */
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.payment-actions button:active {
+  transform: scale(0.98);
+}
+
+.success-btn-payment {
+  background-color: #28a745; /* Xanh lá: Thành công */
+  color: white;
+}
+
+.success-btn-payment:hover {
+  background-color: #218838;
+}
+
+.cancel-btn-payment {
+  background-color: #6c757d; /* Xám: Hủy */
+  color: white;
+}
+
+.cancel-btn-payment:hover {
+  background-color: #5a6268;
+}
+
+.input-error {
+  border: 1px solid red !important;
+  background-color: #ffe6e6 !important;
+}

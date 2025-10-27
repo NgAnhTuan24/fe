@@ -1,0 +1,206 @@
+/* ===== Wrapper ===== */
+.add-cat-page {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.add-cat-header {
+  display: flex;
+  justify-content: space-between; /* tiêu đề trái, nút phải */
+  align-items: center; /* canh giữa theo chiều dọc */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb; /* gạch dưới nhẹ như modal */
+}
+
+.add-cat-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.btn-cancel {
+  display: inline-flex; /* dùng inline-flex để nút vừa đủ chữ + icon */
+  gap: 5px; /* khoảng cách giữa icon và chữ */
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  line-height: 1; /* tránh lệch vertical */
+  transition: background 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #f3f4f6;
+}
+
+/* ===== Form ===== */
+.add-cat-form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+}
+
+.add-cat-form label {
+  /* display: flex;
+  flex-direction: column; */
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.add-cat-form input[type="text"],
+.add-cat-form input[type="number"],
+.add-cat-form input[type="date"],
+.add-cat-form select,
+.add-cat-form textarea,
+.add-cat-form input[type="file"] {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  transition: border 0.2s;
+}
+
+.add-cat-form input:focus,
+.add-cat-form select:focus,
+.add-cat-form textarea:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+.add-cat-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Checkbox */
+.add-cat-form input[type="checkbox"] {
+  margin: 0;
+}
+
+.checkbox-container {
+  margin: 10px 0px;
+}
+
+.checkbox-main {
+  display: flex;
+  align-items: center; /* thẳng hàng checkbox và text */
+  gap: 8px; /* khoảng cách giữa checkbox và chữ */
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Button */
+.add-cat-form .btn-setup {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* căn sang phải */
+  margin-top: 10px; /* khoảng cách trên */
+}
+
+.form-actions button {
+  width: auto; /* không full-width */
+  padding: 10px 20px; /* chỉnh padding nếu muốn */
+}
+
+.add-cat-form button:hover {
+  background-color: #4338ca;
+}
+
+.add-cat-form button:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* ===== Image Preview ===== */
+.preview-section {
+  margin-top: 10px;
+}
+
+.preview-main {
+  width: 200px;
+  height: 200px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  object-fit: cover;
+}
+
+.preview-sub-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.preview-sub {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  object-fit: cover;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+.image-wrapper img {
+  display: block;
+  max-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: #555;
+}
+
+.btn-remove:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  color: #d9534f;
+}
+
+.btn-remove:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}

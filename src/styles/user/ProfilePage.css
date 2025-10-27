@@ -1,0 +1,315 @@
+/* ------------------------------------- */
+/* PROFILE PAGE LAYOUT */
+/* ------------------------------------- */
+
+.profile-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff; /* --card-background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* --shadow-light */
+  color: #343a40; /* --text-color */
+  font-family: Arial, sans-serif;
+}
+
+.profile-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bff; /* --primary-color */
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6; /* --border-color */
+  padding-bottom: 15px;
+}
+
+/* ------------------------------------- */
+/* INFO SECTION */
+/* ------------------------------------- */
+
+.info-section {
+  border: 1px solid #dee2e6; /* --border-color */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #f8f9fa; /* --background-light */
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e9ecef;
+  flex-wrap: wrap;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row label {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  font-weight: 500;
+  color: #6c757d; /* --secondary-color */
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.info-row label svg {
+  margin-right: 8px;
+  color: #007bff; /* --primary-color */
+}
+
+.info-row span,
+.info-row input[type="text"],
+.info-row input[type="password"] {
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 5px 0;
+  min-width: 200px;
+}
+
+.info-row input[type="text"],
+.info-row input[type="password"] {
+  padding: 10px;
+  border: 1px solid #dee2e6; /* --border-color */
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.info-row input:focus {
+  border-color: #007bff; /* --primary-color */
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.error {
+  color: #dc3545; /* --error-color (same as --danger-color) */
+  font-size: 0.85rem;
+  margin-top: 5px;
+  width: 100%;
+  padding-left: 170px;
+}
+
+/* ------------------------------------- */
+/* BUTTON SECTION */
+/* ------------------------------------- */
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.button-section button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+  font-weight: 500;
+}
+
+.button-section button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit/Cancel/Save Button */
+.edit-btn {
+  background-color: #007bff; /* --primary-color */
+  color: white;
+}
+.edit-btn:hover {
+  background-color: #0056b3; /* --primary-hover */
+}
+
+.save-btn {
+  background-color: #28a745; /* --success-color */
+  color: white;
+}
+.save-btn:hover {
+  background-color: #218838;
+}
+
+.cancel-btn {
+  background-color: #dc3545; /* --danger-color */
+  color: white;
+}
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+/* Password/Orders/Logout Buttons */
+.password-btn {
+  background-color: #6c757d; /* --secondary-color */
+  color: white;
+}
+.password-btn:hover {
+  background-color: #5a6268;
+}
+
+.orders-btn {
+  background-color: #ffc107;
+  color: #343a40; /* --text-color */
+}
+.orders-btn:hover {
+  background-color: #e0a800;
+}
+
+.logout-btn {
+  background-color: #f8d7da;
+  color: #dc3545; /* --danger-color */
+  border: 1px solid #dc3545; /* --danger-color */
+}
+.logout-btn:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* ------------------------------------- */
+/* MODAL STYLES (ChangePasswordModal) */
+/* ------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff; /* --card-background */
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #007bff; /* --primary-color */
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #dee2e6; /* --border-color */
+  padding-bottom: 10px;
+}
+
+.modal-content .info-row {
+  display: block;
+  padding: 10px 0;
+  border-bottom: none;
+}
+
+.modal-content .info-row label {
+  width: auto;
+  display: block;
+  margin-bottom: 5px;
+  color: #343a40; /* --text-color */
+}
+
+.modal-content .info-row input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-content .error {
+  padding-left: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 8px 15px;
+  font-size: 0.95rem;
+}
+
+.readonly {
+  background-color: #f3f3f3;
+  cursor: not-allowed;
+  color: #666;
+}
+
+/* ------------------------------------- */
+/* RESPONSIVENESS (Optional) */
+/* ------------------------------------- */
+
+@media (max-width: 600px) {
+  .profile-page {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .info-row {
+    display: block;
+  }
+
+  .info-row label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .info-row span,
+  .info-row input[type="text"],
+  .info-row input[type="password"] {
+    width: 100%;
+    min-width: unset;
+    box-sizing: border-box;
+  }
+
+  .error {
+    padding-left: 0;
+  }
+
+  .button-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-section button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-content {
+    margin: 20px;
+  }
+
+  .modal-buttons {
+    justify-content: space-between;
+  }
+}
