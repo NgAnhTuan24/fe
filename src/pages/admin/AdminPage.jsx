@@ -13,7 +13,7 @@ import {
   isSameYear,
   translateStatus,
 } from "../../utils/dashboardUtils";
-import { getWeekRange } from "../../utils/dateUtils";
+import { getWeekRange, getCurrentWeekOfMonth } from "../../utils/dateUtils";
 import "../../styles/admin/AdminPage.css";
 
 const AdminDashboard = () => {
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
   const [selectedYear2, setSelectedYear2] = useState(today.getFullYear());
   const [selectedMonth, setSelectedMonth] = useState(today.getMonth() + 1);
   const [selectedWeek, setSelectedWeek] = useState(
-    Math.ceil(today.getDate() / 7)
+    getCurrentWeekOfMonth(today.getFullYear(), today.getMonth() + 1)
   );
 
   useEffect(() => {
@@ -224,7 +224,9 @@ const AdminDashboard = () => {
             const now = new Date();
             setSelectedYear2(now.getFullYear());
             setSelectedMonth(now.getMonth() + 1);
-            setSelectedWeek(Math.ceil(now.getDate() / 7));
+            setSelectedWeek(
+              getCurrentWeekOfMonth(now.getFullYear(), now.getMonth() + 1)
+            );
           }}
         />
       </div>
