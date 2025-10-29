@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `${process.env.REACT_APP_API_URL}/contact`;
+const API_URL = "http://localhost:8080/contact";
 
 export const sendContactMessage = async (data) => {
   try {

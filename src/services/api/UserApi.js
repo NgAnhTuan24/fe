@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `${process.env.REACT_APP_API_URL}/api/user`;
+const API_URL = "http://localhost:8080/api/user";
 
 export const getUsers = () => axios.get(API_URL).then((res) => res.data);
 
