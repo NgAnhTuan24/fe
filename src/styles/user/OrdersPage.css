@@ -1,10 +1,13 @@
-/* src/styles/user/OrdersPage.css */
+/* src/styles/user/OrdersPage.css - Refactored */
 
-/* --- Base Layout --- */
+/* ==================================== */
+/* 1. BASE LAYOUT & TYPOGRAPHY */
+/* ==================================== */
 .orders-page {
   padding: 40px 0;
+  /* Giữ nguyên min-height để phù hợp với bố cục ứng dụng */
   min-height: calc(100vh - 120px);
-  background-color: #f9f9f9; /* Light background */
+  background-color: #f9f9f9;
 }
 
 .orders-page.center {
@@ -12,7 +15,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 0; /* Padding khi đang tải/lỗi */
+  padding: 100px 0;
 }
 
 .orders-page .container {
@@ -22,7 +25,7 @@
 }
 
 .orders-page h1 {
-  color: #ff6f61; /* Primary color: Red-Orange */
+  color: #ff6f61;
   margin-bottom: 25px;
   font-size: 2.2rem;
   font-weight: 700;
@@ -30,7 +33,7 @@
   padding-bottom: 10px;
 }
 
-/* --- Login/Loading/Error State --- */
+/* Login/Loading/Error State */
 .orders-page.min-h-screen.center {
   height: 100vh;
 }
@@ -55,7 +58,9 @@
   background-color: #e05e54;
 }
 
-/* --- Status Filter Bar --- */
+/* ==================================== */
+/* 2. STATUS FILTER BAR */
+/* ==================================== */
 .status-filter {
   display: flex;
   flex-wrap: wrap;
@@ -91,54 +96,13 @@
   color: white;
   border-color: #ff6f61;
   font-weight: 600;
+  /* Sử dụng rgba để gọn hơn */
   box-shadow: 0 2px 6px rgba(255, 111, 97, 0.4);
 }
 
-/* --- Empty Orders State --- */
-.empty-orders {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-}
-
-.empty-orders .icon {
-  width: 60px;
-  height: 60px;
-  color: #ff6f61;
-  margin-bottom: 20px;
-}
-
-.empty-orders h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.empty-orders p {
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.empty-orders button {
-  padding: 12px 30px;
-  background-color: #ff6f61;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.empty-orders button:hover {
-  background-color: #e05e54;
-}
-
-/* --- Order List (orders-list) and Card (order-card) --- */
+/* ==================================== */
+/* 3. ORDER LIST & CARD */
+/* ==================================== */
 .orders-list {
   display: grid;
   gap: 20px;
@@ -157,6 +121,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Order Card Header */
 .order-header {
   display: flex;
   justify-content: space-between;
@@ -177,7 +142,7 @@
   color: #666;
 }
 
-/* Status Badge Styles */
+/* Status Badge */
 .status-badge {
   padding: 5px 10px;
   border-radius: 15px;
@@ -195,29 +160,29 @@
   height: 16px;
 }
 
-/* Status Colors */
+/* Status Colors (giữ nguyên để khớp với JS) */
 .status-pending {
   background-color: #ffc107;
   color: #333;
-} /* Yellow */
+}
 .status-confirmed {
   background-color: #007bff;
   color: white;
-} /* Blue */
+}
 .status-shipping {
   background-color: #28a745;
   color: white;
-} /* Green */
+}
 .status-completed {
   background-color: #17a2b8;
   color: white;
-} /* Cyan (used for completed) */
+}
 .status-cancelled {
   background-color: #dc3545;
   color: white;
-} /* Red */
-/* Note: 'delivered' is mapped to 'completed' in your JS logic */
+}
 
+/* Order Card Main Content */
 .order-main {
   display: flex;
   align-items: center;
@@ -263,20 +228,27 @@
   font-weight: 400;
 }
 
-.order-card .view-btn {
+/* Action Buttons */
+.order-card .view-btn,
+.order-card .cancel-btn {
   width: 100%;
-  padding: 10px;
-  background-color: transparent;
-  color: #ff6f61;
-  border: 1px solid #ff6f61;
-  border-radius: 8px;
+  /* Đồng nhất các thuộc tính chung */
+  border-radius: 8px; /* ĐỒNG NHẤT: Cả hai dùng 8px */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-weight: 600;
   transition: all 0.3s;
+  gap: 8px; /* ĐỒNG NHẤT */
+  font-size: 1rem; /* ĐỒNG NHẤT font size */
+}
+
+.order-card .view-btn {
+  padding: 10px; /* Chiều cao cố định */
+  background-color: transparent;
+  color: #ff6f61;
+  border: 1px solid #ff6f61;
+  font-weight: 600;
 }
 
 .order-card .view-btn:hover {
@@ -284,12 +256,75 @@
   color: white;
 }
 
-.order-card .view-btn .icon {
+.order-card .cancel-btn {
+  padding: 10px; /* Cập nhật từ 8px 10px lên 10px để chiều cao bằng view-btn */
+  background-color: #fff5f5;
+  color: #d9534f;
+  border: 1px solid #d9534f;
+  font-weight: 600; /* Cập nhật từ 500 lên 600 để đồng nhất */
+  margin-top: 8px;
+}
+
+.order-card .cancel-btn:hover {
+  background-color: #d9534f;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(217, 83, 79, 0.25);
+}
+
+.order-card .view-btn .icon,
+.order-card .cancel-btn .icon {
   width: 20px;
   height: 20px;
 }
 
-/* --- Order Detail View --- */
+/* Empty Orders State */
+.empty-orders {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.empty-orders .icon {
+  width: 60px;
+  height: 60px;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+.empty-orders h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.empty-orders p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.empty-orders button {
+  padding: 12px 30px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.empty-orders button:hover {
+  background-color: #e05e54;
+}
+
+/* ==================================== */
+/* 4. ORDER DETAIL VIEW */
+/* ==================================== */
 .back-btn {
   background: none;
   border: none;
@@ -313,6 +348,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Detail Header */
 .order-detail .header {
   display: flex;
   justify-content: space-between;
@@ -329,6 +365,7 @@
   padding-bottom: 0;
 }
 
+/* Info Grid */
 .order-detail .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -347,8 +384,7 @@
 .shipping-info h3 {
   font-size: 1.3rem;
   color: #333;
-  margin-top: 0;
-  margin-bottom: 15px;
+  margin: 0 0 15px 0;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -367,7 +403,7 @@
   color: #333;
 }
 
-/* --- Order Items List --- */
+/* Order Items List */
 .order-items h3 {
   font-size: 1.5rem;
   color: #333;
@@ -416,14 +452,33 @@
   color: #ff6f61;
 }
 
-/* --- Order Total --- */
+/* Order Summary Detail (NEW) */
+/* Thêm class này để hiển thị chi tiết phụ (subtotal, shipping) rõ ràng */
+.order-detail .order-summary-detail {
+  padding: 10px 0;
+  margin-top: 15px;
+  text-align: right;
+  border-top: 1px solid #e0e0e0;
+}
+
+.order-detail .order-summary-detail p {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Order Total (Total Amount) */
 .order-total {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
   font-size: 1.5rem;
   font-weight: 700;
-  margin-top: 20px;
+  margin-top: 10px; /* Giảm margin để gần summary-detail hơn */
   padding-top: 20px;
   border-top: 2px solid #ff6f61;
 }
@@ -436,7 +491,9 @@
   color: #ff6f61;
 }
 
-/* --- Responsive Adjustments --- */
+/* ==================================== */
+/* 5. RESPONSIVE ADJUSTMENTS */
+/* ==================================== */
 @media (max-width: 992px) {
   .order-detail .grid {
     grid-template-columns: 1fr;
