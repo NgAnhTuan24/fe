@@ -49,7 +49,15 @@ const RevenueByMonthChart = ({ data, year, onYearChange }) => (
         </defs>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
-        <YAxis tickFormatter={(v) => `${(v / 1_000_000).toFixed(0)}M`} />
+        <YAxis
+          tickFormatter={(v) => `${(v / 1_000_000).toFixed(0)}M`}
+          label={{
+            value: "Doanh thu (VND)",
+            angle: -90,
+            position: "insideLeft",
+            style: { textAnchor: "middle" },
+          }}
+        />
         <Tooltip
           formatter={(value) => `${value.toLocaleString("vi-VN")} VND`}
           labelFormatter={(label) => `Tháng ${label.replace("T", "")}`}
@@ -57,6 +65,7 @@ const RevenueByMonthChart = ({ data, year, onYearChange }) => (
         <Area
           type="monotone"
           dataKey="revenue"
+          name="Doanh thu"
           stroke="#3b82f6"
           strokeWidth={2}
           fill="url(#rev)"
