@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Package, Clock, CheckCircle, XCircle, Eye, Truck } from "lucide-react";
-import { getOrders } from "../../services/api/OrderApi";
+import { getOrders, updateOrderStatus } from "../../services/api/OrderApi";
 import { AuthContext } from "../../context/AuthContext";
+import { formatPrice } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
 import "../../styles/user/OrdersPage.css";
 
@@ -37,13 +38,24 @@ export default function OrdersPage() {
     }
   };
 
-  const formatPrice = (price) =>
-    new Intl.NumberFormat("vi-VN", {
-      style: "currency",
-      currency: "VND",
-    })
-      .format(price)
-      .replace("₫", "VND");
+  const handleCancelOrder = async (orderId) => {
+    if (!window.confirm("Bạn có chắc muốn hủy đơn hàng này không?")) return;
+
+    try {
+      // Gọi API backend để đổi trạng thái
+      await updateOrderStatus(orderId, "CANCELLED");
+
+      // Cập nhật lại UI (có thể reload danh sách hoặc chỉ cập nhật local)
+      setOrders((prev) =>
+        prev.map((o) => (o.id === orderId ? { ...o, status: "CANCELLED" } : o))
+      );
+
+      alert("Đơn hàng đã được hủy thành công!");
+    } catch (err) {
+      console.error("Lỗi khi hủy đơn hàng:", err);
+      alert("Không thể hủy đơn hàng. Vui lòng thử lại.");
+    }
+  };
 
   const getStatusInfo = (status) => {
     const s = status?.toLowerCase();
@@ -327,6 +339,16 @@ export default function OrdersPage() {
                   >
                     <Eye className="icon" /> Xem chi tiết
                   </button>
+
+                  {/* Nút Hủy đơn hàng */}
+                  {["pending"].includes(order.status?.toLowerCase()) && (
+                    <button
+                      className="cancel-btn"
+                      onClick={() => handleCancelOrder(order.id)}
+                    >
+                      <XCircle className="icon" /> Hủy đơn hàng
+                    </button>
+                  )}
                 </div>
               );
             })}
