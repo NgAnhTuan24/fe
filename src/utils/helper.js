@@ -46,3 +46,13 @@ export const calcAge = (dob) => {
   const years = Math.floor(months / 12);
   return years + " năm";
 };
+
+export const formatPrice = (price) => {
+  if (price == null || isNaN(price)) return "0 VND";
+  return new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  })
+    .format(price)
+    .replace("₫", "VND");
+};
