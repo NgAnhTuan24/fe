@@ -4,6 +4,7 @@ import {
   getOrderByCode,
   updateOrderStatusByCode,
 } from "../../services/api/OrderApi";
+import { formatPrice } from "../../utils/helper";
 import "../../styles/user/PaymentPage.css";
 
 const PaymentPage = () => {
@@ -69,15 +70,6 @@ const PaymentPage = () => {
     }
   };
 
-  const formatCurrency = (amount) => {
-    return new Intl.NumberFormat("vi-VN", {
-      style: "currency",
-      currency: "VND",
-    })
-      .format(amount)
-      .replace("₫", "VND");
-  };
-
   return (
     <div className="payment-page">
       <h2>Cổng thanh toán</h2>
@@ -94,7 +86,7 @@ const PaymentPage = () => {
         <p className="total-amount-display">
           Tổng tiền:{" "}
           <span className="amount-value">
-            {order ? formatCurrency(order.totalAmount) : "Đang tải..."}
+            {order ? formatPrice(order.totalAmount) : "Đang tải..."}
           </span>
         </p>
       </div>
